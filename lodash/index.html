@@ -8,10 +8,34 @@
     <title>Document</title>
 </head>
 <body>
-<script type="module">
-    import _ from "./difference.js";
+<!--<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>-->
+<!--<script>-->
+<!--    const users = [-->
+<!--        { 'user': 'barney',  'active': true },-->
+<!--        { 'user': 'fred',    'active': true },-->
+<!--        { 'user': 'pebbles', 'active': false }-->
+<!--        ];-->
 
-    console.log(_([2, 5, 1], [2, 3], [3, 2]));
+<!--    console.log(_.dropWhile(users, ['active', true]));-->
+<!--</script>-->
+<script type="module">
+    import _ from "./.internal/baseFindIndex.js";
+
+    const users = [
+        { 'user': 'barney',  'active': true },
+        { 'user': 'fred',    'active': true },
+        { 'user': 'pebbles', 'active': false }
+    ];
+
+    let index = 5;
+    let f = true;
+    if (f ? index-- : ++index < 5) {
+        console.log(index);
+    } else {
+        console.log(`=${index}`);
+    }
+
+    console.log(_(users, ({active}) => active, 2, true));
 </script>
 </body>
 </html>

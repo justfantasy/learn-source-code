@@ -6,3 +6,5 @@ function dropRight(array, n = 1) {
     n = length - toInteger(n);
     return length ? slice(array, 0, n < 0 ? 0 : n) : [];
 }
+
+export default dropRight;
